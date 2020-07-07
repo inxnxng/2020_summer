@@ -106,15 +106,15 @@ c++에서는 클래스를 사용하여 추상 자료형을 구현
 
 (1) sum = n(n+1)/2
 
-```{.cpp}
+```cpp
 int sumAlgorithmA(int a) {
     int result 0;
     result = a(a+1)/2;
     return result;
 }
-```'''```
+```
 
-```{.cpp}
+```cpp
 int sumAlgorithmB(int a) {
     int result = 0;
     for(int i = 1 ; i <= a; i++){
@@ -124,7 +124,7 @@ int sumAlgorithmB(int a) {
 }
 ```
 
-```{.cpp}
+```cpp
 int sumAlgorithmC(int a) {
     int result 0;
     for(int i = 0; i <= a ; i++){
