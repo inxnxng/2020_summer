@@ -1,0 +1,42 @@
+﻿  class.cpp
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(44,6): error C2248: 'Date::y': private 멤버('Date' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(29): message : 'Date::y' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(28): message : 'Date' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(45,6): error C2248: 'Date::m': private 멤버('Date' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(29): message : 'Date::m' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(28): message : 'Date' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(46,6): error C2248: 'Date::d': private 멤버('Date' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(29): message : 'Date::d' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(28): message : 'Date' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(52,7): error C2248: 'Date::y': private 멤버('Date' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(29): message : 'Date::y' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(28): message : 'Date' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(53,7): error C2248: 'Date::m': private 멤버('Date' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(29): message : 'Date::m' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(28): message : 'Date' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(54,7): error C2248: 'Date::d': private 멤버('Date' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(29): message : 'Date::d' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(28): message : 'Date' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(59,7): error C2248: 'Date::y': private 멤버('Date' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(29): message : 'Date::y' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(28): message : 'Date' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(60,7): error C2248: 'Date::m': private 멤버('Date' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(29): message : 'Date::m' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(28): message : 'Date' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(61,7): error C2248: 'Date::d': private 멤버('Date' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(29): message : 'Date::d' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(28): message : 'Date' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(67,6): error C2248: 'Date::y': private 멤버('Date' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(29): message : 'Date::y' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(28): message : 'Date' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(68,6): error C2248: 'Date::m': private 멤버('Date' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(29): message : 'Date::m' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(28): message : 'Date' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(69,6): error C2248: 'Date::d': private 멤버('Date' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(29): message : 'Date::d' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(28): message : 'Date' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(141,12): error C2065: 'Dec': 선언되지 않은 식별자입니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(141,19): error C2065: 'Jan': 선언되지 않은 식별자입니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(146,7): error C2248: 'Date::m': private 멤버('Date' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(29): message : 'Date::m' 선언을 참조하십시오.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\supplement_studying\09_class\09_class\class.cpp(28): message : 'Date' 선언을 참조하십시오.
