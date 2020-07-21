@@ -1,8 +1,6 @@
 #pragma once
 # include "3.3.h"
-const int MAX_Si = 100;
-
-
+const int MAX_Si = 10;
 
 
 class StudentStack {
