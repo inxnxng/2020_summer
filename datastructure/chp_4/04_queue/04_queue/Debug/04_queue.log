@@ -1,0 +1,4 @@
+﻿  4.4.cpp
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\chp_4\04_queue\04_queue\4.4.cpp(3,12): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+4.4.obj : error LNK2005: _main이(가) 4.2.obj에 이미 정의되어 있습니다.
+C:\Users\red13\Desktop\summervacation\2020_summer\datastructure\chp_4\04_queue\Debug\04_queue.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.
