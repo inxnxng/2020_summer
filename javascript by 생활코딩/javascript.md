@@ -476,3 +476,102 @@ if(funcThis === o2){
 
 ### prototype
 
+[참고](https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67)
+[참고](http://insanehong.kr/post/javascript-prototype/)
+
+자바스크립트에는 클래스가 없으니 상속기능도 없어서 프로토타입을 기반으로 상속을 흉내낸다. 하지만 최근에 class문법이 추가 되었는데 자바스크크립트가 클래스 기반으로 바뀌었다는 것은 아니다.
+
+```javascript
+function Person() {
+    this.eyes = 2;
+    this.nose = 1;
+}
+
+var kim = new Person();
+var park = new Person();
+
+console.log(kim.eyes);
+console.log(park.nose);
+```
+
+이렇게 되면 kim과 park 각각 eyes와 nose가 할당되어 메모리에는 총 4개가 할당된다. 객체 1000개를 만들면 2000개의 변수가 메모리에 할당되는데 이게 메모리를 많이 차지하니
+
+```javascript
+function Person(){}
+
+Person.prototype.eyes = 2;
+Person.prototype.nose = 1;
+
+var kim = new Person();
+var park = new Person();
+
+console.log(kim.eyes);
+```
+
+`Person.prototype`이라는 빈 Object가 어딘가 에 존재하게 되고 Person 함수로부터 생성된 객체(kim, park)들은 어딘가에 존재하는 Object에 들어가 있는 값을 모두 가져다 쓸 수 있다.</br>
+**즉, eyes와 nose를 어딘가에 있는 빈 공간에 넣어놓고 kim과 park이 공유해서 가져다 쓰는 것.**
+
+#### prototype object
+
+객체는 언제나 함수로 생성된다!!!! `var kim = new Person();`이 이와 같음.</br>
+`var obj = {};`는 사실 `var obj = new Object();`와 같다</br>
+놀랍게도 Object는 자바스크립트에서 기본적으로 제공하는 함수이다.</br>
+
+`function Person() {}`을 선언하게 되면(정의하게 되면) 함수만 생성되는 것이 아니라 prototype object도 같이 생성된다. 이렇게 생성된 함수는 prototype이라는 속성을 통해 prototype object에 접근할 수 있는데 이는 일반적인 객체와 같으며 기본적인 속성으로 constructor과 \_\_proto\_\_를 가지고 있다.
+
+* constructor : prototype object와 같이 생성되었던 함수를 가리키고 있다
+* \_\_proto\_\_ : prototype link
+
+그니까 쓸수 있는 공용레고를 미리 만들어놓고 new를 통해 접근 허가증을 kim과 park에게 나눠준 것 그래서 쓰고 싶을 때 새로 만드는게 아니라 공용 레고를 가져다가 보여주는 것! 그렇게 되면 메모리를 덜 쓰겠지 kim과 park에게 각자의 레고를 만들어주는게 아니니까
+
+그리고 이렇게 가져다 쓰는 허용증은 자기가 무엇으로 정의내렸냐에 따라 가질 수 있는데 toString함수의 경우 Person의 eyes와 nose도 쓸 수 있지만 string 요소를 가질 수 있다는 것.
+
+### 참조
+
+```javascript
+var a = {'id' : 1};
+var b = a;
+b.id = 2;
+console.log(a.id);  //결과는 2
+```
+이것은 변수 b와 변수 a에 담긴 객체가 서로 같다는 것을 의미한다.
+
+여기서 주의점
+`a = 1;` : 이건 데이터형이 숫자. 숫자는 원시 데이터형(기본 데이터형)이고 </br>
+`a = {'id': 1};` : 이건 데이터형이 객체이다.</br>
+원시 데이터형을 제외한 모든 데이터 타입은 객체이다. 객체를 다른 말로는 참조 데이터 형이라고 부르는데 **기본 데이터형은 위와 같이 복제**되지만 **참조 데이터형은 참조** 된다.</br>
+
+**모든 객체는 참조 데이터형이다.**
+
+1. 원시 데이터 타입을 인자로 넘겼을 때
+
+```javascript
+var a = 1;
+function func(b){
+    b = 2;          // 복제가 이뤄졌으므로 변경되지 않겠구나 새로운 애만 생겼겠구나
+}
+func(a);
+console.log(a);     // 1
+```
+
+2. 참조 데이터 타입을 인자로 넘겼을 때
+
+```javascript
+var a = {'id':1};
+function func(b){
+    b = {'id':2};   // 아 a의 데이터가 func 함수 안에서 복사가 되어 새로 들어갔구나 약간 전역 변수가 아니라 지역 변수처럼 작용하는 구나
+}
+func(a);
+console.log(a.id);  // 1
+```
+
+3. 파라미터 b가 객체 a의 레퍼런스 일 때
+
+```javascript
+var a = {'id':1};
+function func(b){
+    b.id = 2;       // 전역 변수를 수정한 느낌인 것
+}
+func(a);
+console.log(a.id);  // 2
+```
