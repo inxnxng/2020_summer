@@ -30,5 +30,19 @@
     <ClCompile Include="5.5.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="5.9.h">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="5.10.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="5.13.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="5.11.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
