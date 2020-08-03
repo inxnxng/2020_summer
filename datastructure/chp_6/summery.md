@@ -39,7 +39,6 @@
 ## 배열로 구현한 리스트
 
 1. 데이터 멤버
-
     1. data\[MAX_LIST_SIZE]
     2. length : 리스트에 저장된 요소의 개수
 
@@ -66,6 +65,81 @@ data[MAX_DATA_SIZE]
 > 노드 클래스에서 가능한 많은 기능을 구현하고, 리스트 클래스에서는 이들을 사용함으로써 리스트 클래스의 복잡도를 줄이는 방법 
 >> 객체 지향 프로그래밍 관점으로 바라보았을 때 데이터 위주의 관점으로 바라보면서 상향식(bottom up)으로 해결하기
 
+### 삽입 연산
+
+```
+void insert(before,node){
+    if(isEmpty())
+        then head <- node
+    else node.link <- before.link
+         before.link <- node
+}
+```
+* `node.link <- before.link`
+    * 전 노드가 향하는 포인터 방향은 현재 노드의 방향 포인터가 복사하여 가져와야 하고
+* `before.link <- node`
+    * 현재 노드의 위치를 전 노드의 포인터 방향이 node를 가리켜야 한다???
+
+```cpp
+//포인터 복사이고(제발 link는 **다음 노드**임)
+node->link = link;
+//this가 가리키는 링크에 node를 저장한다 임....
+this->link = node;
+```
+
+### 삭제 연산
+
+```
+bool remove(before){
+    if(isEmpty()) = false;
+        then removed <- before.link
+             before.link <- removed.link
+             destroy(removed)
+}
+```
+* `removed <- before.link`
+    * 전 노드는 현재 삭제할 노드를 가리키고 있는데 그 노드 우선 복사해놓고
+* `before.link <- removed.link`
+    * 삭제할 노드가 가리키는 주소를 전 노드에게 주어 전 노드가 삭제할 노드 다음 노드를 향하도록 해놓는다
+* `destroy(removed)`
+    * 그리고 삭제할 노드를 destroy하기
+  
+```cpp
+//link는 항상 다음 노드임
+Node* removed = link;
+//삭제될 노드가 향했던 포인트를 전 노드의 포인터가 향하도록
+link = removed->link;
+```
+
+### 연산자 detail
+
+최초의 p는 헤드 포인터 `p = getHead();` 헤드 노드는 `org`. 이후로 link를 따라 진행 `p = p->getLink();`
+리스트에 삽입할 노드 객체는 동적으로 할당하였는데, `new Node(10)`을 통해 Node 객체 하나를 동적으로 생성하고 초기화한 후 그 객체의 주소를 반환한다
+
 ## 다양한 형태의 연결 리스트
+
+### circular linked list
+
+원형 연결 리스트. 리스트의 마지막 노드의 링크가 첫 번째 노드를 가리키는 연결리스트. 마지막 노드의 링크 필드는 `NULL`이 아니라 `첫번째 노드 주소`가 된다.
+다만 **헤드 포인터는 리스트의 마지막 노드를 가리키게 된다**
+
+### double linked list
+
+이중 연결 리스트. 양방향으로 검색이 가능해진다.
+```
+        데이터 필드
+prev   |   data   |   next
+선행노드           후속노드
+```
+임의의 노드의 포인터를 p라 한다면 `p==p->next->prev == p->prev->next`이다. 무슨 난리람ㅠ
+
+#### 추가 연산
+
+1. 새로운 노드 N의 선행 노드를 현재 노드로 설정
+2. N의 후속 노드를 현재 노드의 후속 노드로 설정
+3. 현재 노드의 후속 노드의 선행 노드를 N으로 설정
+4. 현재 노드의 후속 노드를 N으로 설정
+
+
 
 ## 연결 리스트의 응용 : 라인 편집기
