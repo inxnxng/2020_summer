@@ -5,41 +5,85 @@ var url = require('url');
 var app = http.createServer(function(request,response){
     var _url = request.url;
     var queryData = url.parse(_url, true).query;
-    console.log(queryData.id);
-    if(_url == '/'){
-      title = 'Welcome';
-    }
-    if(_url == '/favicon.ico'){
-      return response.writeHead(404);
-    }
-    response.writeHead(200);
-    //화면에 뿌리기
-    var title =queryData.id;
-    var template = `
-    <!doctype html>
-<html>
-<head>
-  <title>WEB1 - ${title}</title>
-  <meta charset="utf-8">
-</head>
-<body>
-  <h1><a href="/">WEB</a></h1>
-  <ol>
-    <li><a href="?id=HTML">HTML</a></li>
-    <li><a href="?id=CSS">CSS</a></li>
-    <li><a href="?id=Javascript">JavaScript</a></li>
-  </ol>
-  <h2>${title}</h2>
-  <p><a href="https://www.w3.org/TR/html5/" target="_blank" title="html5 speicification">Hypertext Markup Language (HTML)</a> is the standard markup language for <strong>creating <u>web</u> pages</strong> and web applications.Web browsers receive HTML documents from a web server or from local storage and render them into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
-  <img src="coding.jpg" width="100%">
-  </p><p style="margin-top:45px;">HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects, such as interactive forms, may be embedded into the rendered page. It provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets.
-  </p>
-</body>
-</html>
+    var pathname = url.parse(_url, true).pathname;
 
-    
-    `;
-    response.end(template);
+
+    if(pathname === '/'){
+      if(queryData.id === undefined){
+        fs.readdir('./data', function(error, filelist){
+          var title = 'Welcome';
+          var description = 'Hello, Node.js';
+
+          //list 태그 시작
+          var list = '<ul>';
+          //리스트 순서대로 뿜어내기 위해서 변수 i 설정하는 것이지
+          var i = 0;
+          while(i < filelist.length){
+            list = list + `<li><a href="/?id=${filelist[i]}">${filelist[i]}</a></li>`;
+            i = i + 1;
+          }
+          list = list+'</ul>';
+          //list 태그 끝
+
+          //이제 보여질 부분
+          var template = `
+          <!doctype html>
+          <html>
+          <head>
+            <title>WEB1 - ${title}</title>
+            <meta charset="utf-8">
+          </head>
+          <body>
+            <h1><a href="/">WEB</a></h1>
+            ${list}
+            <h2>${title}</h2>
+            <p>${description}</p>
+          </body>
+          </html>
+          `;
+          response.writeHead(200);
+          response.end(template);
+        })
  
+ 
+      // 아래는 반복되는 부분
+      } else {
+        fs.readdir('./data', function(error, filelist){
+          var title = 'Welcome';
+          var description = 'Hello, Node.js';
+          var list = '<ul>';
+          var i = 0;
+          while(i < filelist.length){
+            list = list + `<li><a href="/?id=${filelist[i]}">${filelist[i]}</a></li>`;
+            i = i + 1;
+          }
+          list = list+'</ul>';
+          fs.readFile(`data/${queryData.id}`, 'utf8', function(err, description){
+            var title = queryData.id;
+            var template = `
+            <!doctype html>
+            <html>
+            <head>
+              <title>WEB1 - ${title}</title>
+              <meta charset="utf-8">
+            </head>
+            <body>
+              <h1><a href="/">WEB</a></h1>
+              ${list}
+              <h2>${title}</h2>
+              <p>${description}</p>
+            </body>
+            </html>
+            `;
+            response.writeHead(200);
+            response.end(template);
+          });
+        });
+      }
+      // 오류를 발견했을 때 오류 뿜뿜
+    } else {
+      response.writeHead(404);
+      response.end('Not found');
+    }
 });
 app.listen(3000);
