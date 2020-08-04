@@ -140,6 +140,8 @@ prev   |   data   |   next
 3. 현재 노드의 후속 노드의 선행 노드를 N으로 설정
 4. 현재 노드의 후속 노드를 N으로 설정
 
-
-
-## 연결 리스트의 응용 : 라인 편집기
+```cpp
+if (i % 2)deq.addFront(new Node(i));
+else deq.addRear(new Node(i));
+```
+결국 중요한 것 ==> **새로운 요소를 추가**할 때 `i`로 놓으면 안되고 `new Node(i)`을 놓아야한다.
