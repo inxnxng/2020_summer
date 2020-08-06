@@ -61,4 +61,75 @@ process.argv.forEach((val,index)=>{
 
 결국 변수 넣는 것을 `${sth}`으로 접근해야 한다는 것.
 
-## 
+## 동기(synchronous)와 비동기(asynchronous)
+
+```javascript
+var b = function () {
+    console.log('b');
+}
+
+//callback
+function showfunc(callback) {
+    callback();
+}
+
+showfunc(b);
+```
+
+`b();` 한 값과 `showfunc(b);`한 값은 동일한 결과값을 도출해낸다.
+
+## package manager
+
+NPM -> nodejs에서 쓰는 것
+
+## HTML Form
+
+HTTP method : 오픈소스 수업 시간에 배웠고 썼지만 공부를 안한 내가 잘못 이 바보 멍청이ㅣㅣㅣㅣ
+
+***
+[참고](https://www.zerocho.com/category/HTTP/post/5b344f3af94472001b17f2da)
+
+## HTTP란 무엇인가
+
+Hyper Text Transfer Protocol, 인터넷에서 데이터를 주고 받을 수 있는 프로토콜(규칙).
+**서버의 역할은 요청에 대한 응답을 보내준다는 것**
+
+### 요청
+
+시작줄, 헤더, 본문
+
+```http
+GET https://www.zerocho.com HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) ...
+Upgrade-Insecure-Requests: 1
+```
+
+```http
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Encoding: gzip
+Content-Length: 35653
+Content-Type: text/html;
+
+<!DOCTYPE html><html lang="ko" data-reactroot=""><head><title...
+```
+[HTTP 상태(응답) 코드](https://www.zerocho.com/category/NodeJS/post/579b4ead062e76a002648af7)
+
+### HTTP method
+
+REST : 주소를 자원이라고 보고 메서드를 동사라고 보는 개발 방식
+`POST action주소 HTTP/1.1`
+
+GET POST(create) DELETE PUT(update)
+
+***
+
+callback 함수도 중요
+
+## nodejs redirection
+
+302는 redirection을 위함 (200은 성공)
+```javascript
+response.writeHead(302,{Location : `/?id=${title}`});
+```
+[파일 생성, 삭제, 수정, 동기와 비동기](https://dydals5678.tistory.com/96)
