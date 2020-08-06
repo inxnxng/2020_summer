@@ -2,8 +2,6 @@
 
 20200805</br>
 [참고](http://suyeongpark.me/archives/2314)
-맥주!!!!!!
-html 정리
 
 ## 순환의 소개
 
