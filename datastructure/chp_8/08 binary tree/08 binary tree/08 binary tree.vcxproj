@@ -141,6 +141,10 @@
   <ItemGroup>
     <ClInclude Include="8.1.h" />
     <ClInclude Include="8.2.h" />
+    <ClInclude Include="8.5.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="8.3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

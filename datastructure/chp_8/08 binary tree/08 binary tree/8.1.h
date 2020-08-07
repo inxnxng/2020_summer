@@ -1,20 +1,21 @@
 #pragma once
 #include<iostream>
+using namespace std;
 
-template <typename T>
+
 class BinaryNode {
 protected:
-	T data;
+	char data;
 	BinaryNode* left;
 	BinaryNode* right;
 public:
-	BinaryNode(T val = 0; BinaryNode* l = NULL; BinaryNode* r = NULL)
+	BinaryNode(char val, BinaryNode* l = NULL, BinaryNode* r = NULL)
 		:data(val), left(l), right(r) {}
-	void setData(T val) { data = val; }
+	void setData(char val) { data = val; }
 	void setLeft(BinaryNode* l) { left = l; }
 	void setRight(BinaryNode* r) { right = r; }
-	T getData() { return data; }
+	char getData() { return data; }
 	BinaryNode* getLeft() { return left; }
 	BinaryNode* getRight() { return right; }
-	bool isLeaf() { return left == NULL & right == NULL; }
+	bool isLeaf() { return (left == NULL) && (right == NULL); }
 };
