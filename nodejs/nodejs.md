@@ -129,7 +129,20 @@ callback 함수도 중요
 ## nodejs redirection
 
 302는 redirection을 위함 (200은 성공)
+
+[HTTP 상태 코드](https://ko.wikipedia.org/wiki/HTTP_%EC%83%81%ED%83%9C_%EC%BD%94%EB%93%9C)
+
+* 1xx(정보) : 요청을 받았으며 프로세스를 계속한다
+* **2xx(성공)** : 요청을 성공적으로 받았으며 인식했고 수용하였다
+* **3xx(리다이렉션)** : 요청 완료를 위해 추가 작업 조치가 필요하다
+* **4xx(클라이언트 오류)** : 요청의 문법이 잘못되었거나 요청을 처리할 수 없다
+* 5xx(서버 오류) : 서버가 명백히 유효한 요청에 대해 충족을 실패했다
+
 ```javascript
 response.writeHead(302,{Location : `/?id=${title}`});
 ```
+
 [파일 생성, 삭제, 수정, 동기와 비동기](https://dydals5678.tistory.com/96)
+
+## 정보 보안 for 입력 & 출력
+
