@@ -144,5 +144,13 @@ response.writeHead(302,{Location : `/?id=${title}`});
 
 [파일 생성, 삭제, 수정, 동기와 비동기](https://dydals5678.tistory.com/96)
 
-## 정보 보안 for 입력 & 출력
+## npm init
 
+json 파일 하나 만들어준다.
+
+```
+$ npm install -S sanitize-html
+```
+
+-S : 이 프로젝트에서만 쓰겠다.
+-g : 전역 모든 프로젝트에서 쓰겠다.
