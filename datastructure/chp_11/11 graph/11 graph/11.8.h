@@ -2,8 +2,9 @@
 #include"11.1.h"
 
 class SrchAMGraph : public AdjMatGraph {
-	bool visited[MAX];
+	
 public:
+	bool visited[MAX];
 	void resetVisited() {
 		for (int i = 0; i < size; i++) {
 			visited[i] = false;
@@ -18,6 +19,4 @@ public:
 			if (isLinked(v, w) && visited[w] == false) DFS(w);
 		}
 	}
-
-
 };
