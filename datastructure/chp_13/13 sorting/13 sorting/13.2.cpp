@@ -1,4 +1,5 @@
 #include "13.1.h"
+#include<cstring>
 
 static void initRandom(int list[], int n, int max = 100) {
 	for (int i = 0; i < n; i++) {
@@ -26,6 +27,8 @@ int main() {
 */
 
 //13.4
+/*
+
 int main() {
 	int list[16];
 	int n = 16;
@@ -33,4 +36,21 @@ int main() {
 	printArray(list, n, "original : ");
 
 
+
+	insertionSortFn(list, n, ascend);
+	printArray(list, n, "ascend : ");
+
+	return 0;
+
+}
+*/
+
+//13.5
+int main() {
+	int list[16];
+	int n = 16;
+	initRandom(list, n);
+	printArray(list, n, "Original : ");
+	bubblesort(list, n);
+	printArray(list, n, "Selection : ");
 }
